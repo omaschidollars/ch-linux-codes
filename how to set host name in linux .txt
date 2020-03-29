@@ -1,0 +1,131 @@
+Complete!
+[ec2-user@ip-10-0-1-46 ~]$ sudo su -
+[root@ip-10-0-1-46 ~]# hostnamectl set-hostname web-server
+[root@ip-10-0-1-46 ~]# reboot
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key"
+Last login: Wed Mar 11 08:52:33 2020 from 76.106.103.109
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@web-server ~]$ vim /etc/hosts
+[ec2-user@web-server ~]$ vim /etc/hosts
+[ec2-user@web-server ~]$ vim /etc/hosts
+[ec2-user@web-server ~]$ sudo su -
+Last login: Wed Mar 11 09:17:36 UTC 2020 on pts/0
+[root@web-server ~]# vim/etc/hosts
+-bash: vim/etc/hosts: No such file or directory
+[root@web-server ~]# vim /etc/hosts
+[root@web-server ~]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:eQ+VSGUA7dKpZ+/4S18zQwzbqNZaLDhjHdlGB7jGK7U root@web-server
+The key's randomart image is:
++---[RSA 2048]----+
+|        .ooo+.   |
+|         ..+ ..  |
+|         oo.+o . |
+|        ..+*+ B  |
+|        So=oo= + |
+|        .o=E* .  |
+|         B.*o+ +.|
+|        . +o=. .+|
+|          .++..  |
++----[SHA256]-----+
+[root@web-server ~]# cd .ssh
+[root@web-server .ssh]# ls
+authorized_keys  id_rsa  id_rsa.pub
+[root@web-server .ssh]# ls id_rsa.pub
+id_rsa.pub
+[root@web-server .ssh]# less id_rsa.pub
+[root@web-server .ssh]# less id_rsa.pub
+[root@web-server .ssh]# vim id_rsa.pub
+[root@web-server .ssh]# useradd mike
+[root@web-server .ssh]# passwd password
+passwd: Unknown user name 'password'.
+[root@web-server .ssh]# passwd mike
+Changing password for user mike.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@web-server .ssh]# ls
+authorized_keys  id_rsa  id_rsa.pub
+[root@web-server .ssh]# sudo su -
+Last login: Wed Mar 11 09:47:00 UTC 2020 on pts/0
+[root@web-server ~]# useradd pence
+[root@web-server ~]# passwd pence
+Changing password for user pence.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@web-server ~]# ls
+[root@web-server ~]# ls /home
+ec2-user  mike  pence
+[root@web-server ~]# vim /etc/ssh/sshd_config
+[root@web-server ~]# su - pence
+[pence@web-server ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/pence/.ssh/id_rsa):
+Created directory '/home/pence/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/pence/.ssh/id_rsa.
+Your public key has been saved in /home/pence/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:aKuqlGLvlfOJUKxPPCEzOuMxH7kgRyCy3QdPboohP1s pence@web-server
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|+   . .          |
+|o+ ..= .         |
+|o ++.+B S        |
+| +ooO=o.         |
+|o@==EB.          |
+|*.O+B.= .        |
+|.o+*.o o         |
++----[SHA256]-----+
+[pence@web-server ~]$ ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc  .ssh
+[pence@web-server ~]$ cd .ssh
+[pence@web-server .ssh]$ ls
+id_rsa  id_rsa.pub
+[pence@web-server .ssh]$ vim id_rsa.pub
+[pence@web-server .ssh]$ mv id_rsa.pub authorized_keys
+[pence@web-server .ssh]$ ssh trump@sql-server
+The authenticity of host 'sql-server (10.0.1.94)' can't be established.
+ECDSA key fingerprint is SHA256:moRsQbYMHYKRK0FC8ESEz2TwFRg+wAfiTf4YYQ4EvXw.
+ECDSA key fingerprint is MD5:ab:8b:ed:93:59:5b:b2:2b:43:e2:80:33:5f:dc:10:fc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'sql-server,10.0.1.94' (ECDSA) to the list of known hosts.
+Last login: Wed Mar 11 11:26:22 2020
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[trump@sql-server ~]$ vim dollars
+[trump@sql-server ~]$ ls
+dollars
+[trump@sql-server ~]$ exit
+logout
+Connection to sql-server closed.
+[pence@web-server .ssh]$ vim indy
+[pence@web-server .ssh]$ ls
+authorized_keys  id_rsa  indy  known_hosts
+[pence@web-server .ssh]$ scp indy trump@sql-server: /home/trump
+/home/trump: No such file or directory
+[pence@web-server .ssh]$ scp indy trump@sql-server:/home/trump
+indy                                          100%   15    13.1KB/s   00:00
+[pence@web-server .ssh]$
